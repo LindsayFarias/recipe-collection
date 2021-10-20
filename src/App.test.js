@@ -90,5 +90,6 @@ test('two recipe names from state appear in an unordered list', async () => {
   userEvent.type(app.getByLabelText('Instructions:'), "1)spread pb on bread 2)spread jelly on another piece of bread 3)smush together")
   userEvent.click(app.getByRole('button'));
 
+  expect(screen.getByText('My Recipes')).toBeInTheDocument()
   expect(screen.getByRole('list').children.length).toBe(2)
 })
